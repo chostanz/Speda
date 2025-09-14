@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <nav class="navbar navbar-expand-lg" style="margin-left:30px">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Speda" width="30" height="24">Speda</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tambah.html">Tambah Mahasiswa</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </nav>
+    <div class="box">
+      <h2>Tambah Mahasiswa</h2>
+      <br>
+      <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari Mahasiswa" aria-label="Search"/>
+          <button class="btn btn-outline-secondary" type="button">Cari</button>
+        </form>
+        <br>
+    <table class="table table-dark table-striped-columns">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">NIM</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Jenis Kelamin</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>123240108</td>
+          <td>Dewi</td>
+          <td>Perempuan</td>
+          <td>      
+            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger" onclick="showPopup()">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>123240100</td>
+          <td>Thornton</td>
+          <td>Laki-laki</td>
+          <td>      
+            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger" onclick="showPopup()">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>123240009</td>
+          <td>Doe</td>
+          <td>Laki-laki</td>
+          <td>      
+            <button type="button" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-danger" onclick="showPopup()">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="popup">
+        <div class="popup-header">
+          Hapus Data
+          <span style="cursor:pointer;" onclick="closePopup()">✕</span>
+        </div>
+        <div class="popup-body">
+          Apakah anda yakin menghapus mahasiswa?
+        </div>
+        <div class="popup-footer">
+          <button class="btn btn-batal" onclick="closePopup()">Batal</button>
+          <button class="btn btn-hapus" onclick="hapusData()">Hapus</button>
+        </div>
+      </div>
+    </div>
+    <script>
+        function showPopup() {
+          document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closePopup() {
+          document.getElementById("overlay").style.display = "none";
+        }
+
+        function hapusData() {
+          alert("Data berhasil dihapus!");
+          closePopup();
+        }
+        </script>
+</body>
+</html>
